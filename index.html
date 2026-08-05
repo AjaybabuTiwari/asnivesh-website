@@ -10,11 +10,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
 <style>
 :root{
-  --bg:#FFFFFF; --bg-soft:#F6F7F9; --bg-dark:#0A0D12;
-  --ink:#0B0E14; --ink-soft:#5B6472; --ink-faint:#8A93A0;
-  --invert:#F3F6F5; --invert-soft:#93A19B;
-  --border:#E7E9EC; --border-dark:#1D222A;
-  --accent:#00B37E; --accent-dark:#00915F; --accent-soft:#E4F9F1;
+  --bg:#FDFAF5; --bg-soft:#F5EEE3; --bg-dark:#122420;
+  --ink:#211C16; --ink-soft:#6B6055; --ink-faint:#9A9084;
+  --invert:#F5F1E9; --invert-soft:#9FB0A8;
+  --border:#EAE1D2; --border-dark:#25352F;
+  --accent:#00A876; --accent-dark:#00825C; --accent-soft:#E3F3EB;
+  --gold:#C98A1F; --gold-soft:#F8ECD6;
   --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
   --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 }
@@ -28,13 +29,13 @@ a{color:inherit;text-decoration:none;}
 .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;font-size:22px;line-height:1;display:block;}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;font-weight:600;
-  letter-spacing:0.04em;color:var(--accent-dark);background:var(--accent-soft);border:1px solid rgba(0,145,95,0.18);
+  letter-spacing:0.04em;color:var(--accent-dark);background:var(--accent-soft);border:1px solid rgba(0,130,92,0.2);
   padding:6px 12px;border-radius:4px;text-transform:uppercase;
 }
 .eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;}
 @media (prefers-reduced-motion:no-preference){
   .eyebrow::before{animation:pulse-dot 2s ease-in-out infinite;}
-  @keyframes pulse-dot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,179,126,0.4);}50%{opacity:0.7;box-shadow:0 0 0 4px rgba(0,179,126,0);}}
+  @keyframes pulse-dot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,168,118,0.4);}50%{opacity:0.7;box-shadow:0 0 0 4px rgba(0,168,118,0);}}
   .reveal{opacity:0;transform:translateY(14px);transition:opacity 0.6s ease,transform 0.6s ease;}
   .reveal.in-view{opacity:1;transform:none;}
 }
@@ -65,7 +66,7 @@ a{color:inherit;text-decoration:none;}
 .hero{padding:88px 0 56px;position:relative;}
 .hero::before{
   content:'';position:absolute;inset:0;pointer-events:none;
-  background-image:radial-gradient(circle,rgba(11,14,20,0.06) 1px,transparent 1px);
+  background-image:radial-gradient(circle,rgba(33,28,22,0.07) 1px,transparent 1px);
   background-size:26px 26px;
   mask-image:radial-gradient(ellipse 70% 60% at 70% 30%,#000 40%,transparent 100%);
 }
@@ -88,7 +89,7 @@ a{color:inherit;text-decoration:none;}
 .hero .phone-wrap{display:flex;justify-content:center;position:relative;z-index:1;}
 .device{
   width:264px;border-radius:18px;border:1px solid var(--border);background:var(--bg-soft);padding:10px;
-  box-shadow:0 30px 60px -28px rgba(11,14,20,0.25);margin:12px;
+  box-shadow:0 30px 60px -28px rgba(33,28,22,0.14);margin:12px;
 }
 .device .notch{width:56px;height:5px;border-radius:2px;background:var(--border);margin:0 auto 8px;}
 .device .screen{border-radius:10px;overflow:hidden;border:1px solid var(--border);}
@@ -120,6 +121,9 @@ a{color:inherit;text-decoration:none;}
   width:40px;height:40px;border-radius:6px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;
 }
 .feat .ic .material-symbols-outlined{color:var(--accent-dark);}
+.feat .ic.gold{background:var(--gold-soft);}
+.feat .ic.gold .material-symbols-outlined{color:var(--gold);}
+.strip .item.gold .material-symbols-outlined{color:var(--gold);}
 .feat h3{font-size:15.5px;font-weight:700;}
 .feat p{font-size:13.5px;color:var(--ink-soft);line-height:1.6;}
 
@@ -156,8 +160,8 @@ a{color:inherit;text-decoration:none;}
 .final-cta h2{color:#fff;font-size:clamp(27px,3.4vw,38px);}
 .final-cta p{color:var(--invert-soft);font-size:15.5px;margin-top:4px;max-width:440px;margin-left:auto;margin-right:auto;}
 .final-cta .cta-row{justify-content:center;margin-top:8px;}
-.final-cta .btn-primary{background:var(--accent);color:#04140F;}
-.final-cta .btn-primary:hover{background:#00CB8C;}
+.final-cta .btn-primary{background:var(--accent);color:#0B1F19;}
+.final-cta .btn-primary:hover{background:#00BE85;}
 .final-cta .btn-secondary{border-color:var(--border-dark);color:var(--invert);}
 .final-cta .btn-secondary:hover{border-color:var(--invert-soft);background:rgba(255,255,255,0.04);}
 
@@ -215,9 +219,9 @@ footer .fbrand{font-family:var(--mono);font-size:12px;}
 <div class="strip">
   <div class="wrap">
     <div class="item"><span class="material-symbols-outlined">account_balance</span>FD &amp; RD Tracking</div>
-    <div class="item"><span class="material-symbols-outlined">handshake</span>Confirmed Udhar Ledger</div>
+    <div class="item gold"><span class="material-symbols-outlined">handshake</span>Confirmed Udhar Ledger</div>
     <div class="item"><span class="material-symbols-outlined">savings</span>Monthly Budgeting</div>
-    <div class="item"><span class="material-symbols-outlined">calculate</span>Built-in Calculators</div>
+    <div class="item gold"><span class="material-symbols-outlined">calculate</span>Built-in Calculators</div>
   </div>
 </div>
 
@@ -234,7 +238,7 @@ footer .fbrand{font-family:var(--mono);font-size:12px;}
         <p>Track every FD and RD across banks — principal, profit, maturity date, all in one view, with alerts before anything matures.</p>
       </div>
       <div class="feat">
-        <div class="ic"><span class="material-symbols-outlined">calculate</span></div>
+        <div class="ic gold"><span class="material-symbols-outlined">calculate</span></div>
         <h3>Calculators</h3>
         <p>Built-in FD, RD and Home Loan calculators with instant, visual principal-vs-interest breakdowns.</p>
       </div>
@@ -244,7 +248,7 @@ footer .fbrand{font-family:var(--mono);font-size:12px;}
         <p>Log monthly income and spending by category — see exactly where the money goes, and how much you're actually saving.</p>
       </div>
       <div class="feat">
-        <div class="ic"><span class="material-symbols-outlined">handshake</span></div>
+        <div class="ic gold"><span class="material-symbols-outlined">handshake</span></div>
         <h3>Udhar</h3>
         <p>A running ledger for money lent or borrowed — linked to a phone number, confirmed by both sides. Set a promised repayment date and both of you get reminded before it's due.</p>
       </div>
@@ -318,7 +322,7 @@ footer .fbrand{font-family:var(--mono);font-size:12px;}
 <section class="final-cta" id="download">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow" style="background:rgba(0,179,126,0.12);border-color:rgba(0,179,126,0.3);">Ready When You Are</span>
+      <span class="eyebrow" style="background:rgba(0,168,118,0.14);border-color:rgba(0,168,118,0.32);">Ready When You Are</span>
       <h2>Start tracking everything, in one place.</h2>
     </div>
     <p>Nivesh is in early testing on Google Play — join now to download it and help shape the app.</p>
