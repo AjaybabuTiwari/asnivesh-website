@@ -113,7 +113,7 @@ a{color:inherit;text-decoration:none;}
 .features{padding:96px 0;}
 .section-head{max-width:600px;margin:0 auto 52px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;}
 .section-head h2{font-size:clamp(27px,3.2vw,36px);}
-.feat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
 .feat{background:var(--bg);padding:28px 24px;display:flex;flex-direction:column;gap:14px;transition:background 0.15s ease;position:relative;}
 .feat:hover{background:var(--bg-soft);}
 .feat:hover::after{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:var(--accent);}
@@ -135,8 +135,13 @@ a{color:inherit;text-decoration:none;}
 
 /* SHOWCASE */
 .showcase{padding:96px 0;}
-.phone-row{display:flex;gap:26px;overflow-x:auto;padding:12px 6px 24px;justify-content:center;flex-wrap:wrap;}
-.phone{flex:none;width:212px;}
+.phone-row{
+  display:flex;gap:26px;overflow-x:auto;padding:12px 28px 28px;margin:0 -28px;
+  scroll-snap-type:x proximity;scrollbar-width:thin;
+}
+.phone-row::-webkit-scrollbar{height:6px;}
+.phone-row::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px;}
+.phone{flex:none;width:212px;scroll-snap-align:start;}
 .phone-cap{margin-top:16px;text-align:center;font-size:13.5px;font-weight:700;}
 .phone-cap span{display:block;font-family:var(--mono);font-size:11px;font-weight:500;color:var(--ink-faint);margin-top:3px;letter-spacing:0.02em;}
 
@@ -256,6 +261,16 @@ footer .fbrand{font-family:var(--mono);font-size:12px;}
         <div class="ic gold"><span class="material-symbols-outlined">handshake</span></div>
         <h3>Udhar</h3>
         <p>A running ledger for money lent or borrowed — linked to a phone number, confirmed by both sides. Set a promised repayment date and both of you get reminded before it's due.</p>
+      </div>
+      <div class="feat">
+        <div class="ic"><span class="material-symbols-outlined">insights</span></div>
+        <h3>Insights</h3>
+        <p>Every FD, RD and loan comes with an automatic principal-vs-interest breakdown — see your real return, or exactly what a loan is costing you, without doing the math yourself.</p>
+      </div>
+      <div class="feat">
+        <div class="ic gold"><span class="material-symbols-outlined">auto_awesome</span></div>
+        <h3>Quick Add with AI</h3>
+        <p>Type it the way you'd say it — "FD of 50000 at 7% for 12 months at HDFC" — and AI fills in the form for you.</p>
       </div>
     </div>
   </div>
